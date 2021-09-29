@@ -1,29 +1,28 @@
-[![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.gif?raw=true)](https://dafcoe.github.io/vue-collapsible-panel)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@swoga/vue-collapsible-panel?style=flat-square)
+![npm](https://img.shields.io/npm/dt/@swoga/vue-collapsible-panel?style=flat-square)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/swoga/vue-collapsible-panel?style=flat-square)
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-collapsible-panel?style=flat-square)
-![npm](https://img.shields.io/npm/dt/@dafcoe/vue-collapsible-panel?style=flat-square)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-collapsible-panel?style=flat-square)
-
-# @dafcoe/vue-collapsible-panel
+# @swoga/vue-collapsible-panel
 Easy to use, customisable collapsible panel / accordion library built using Vue3.
+This is a fork of [dafcoe/vue-collapsible-panel](https://github.com/dafcoe/vue-collapsible-panel).
 <br>
-See it action on [demo](https://dafcoe.github.io/vue-colapsible-panel) page.
+See it action on [demo](https://swoga.github.io/vue-colapsible-panel) page.
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
 ```
-$ yarn add @dafcoe/vue-collapsible-panel
+$ yarn add @swoga/vue-collapsible-panel
 
 --- or ---
 
-$ npm install --save @dafcoe/vue-collapsible-panel
+$ npm install --save @swoga/vue-collapsible-panel
 ```
 
 ## Usage
 Import `VueCollapsiblePanelGroup` and `VueCollapsiblePanel` components, either globally (on your main.js / main.ts file) or locally (on your component):
 ```js
 // Globally
-import VueCollapsiblePanel from '@dafcoe/vue-collapsible-panel'
+import VueCollapsiblePanel from '@swoga/vue-collapsible-panel'
 const app = createApp(App)
 app.use(VueCollapsiblePanel).mount('#app')
 
@@ -31,12 +30,12 @@ app.use(VueCollapsiblePanel).mount('#app')
 import {
   VueCollapsiblePanelGroup,
   VueCollapsiblePanel,
-} from '@dafcoe/vue-collapsible-panel'
+} from '@swoga/vue-collapsible-panel'
 ```
 
 Import default styles (optional - you can define your own styling):
 ```js
-import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
+import '@swoga/vue-collapsible-panel/dist/vue-collapsible-panel.css'
 ```
 
 Use it in the template as follows:
@@ -105,4 +104,4 @@ For granular control over the colors, the following css variables can be overrid
 ````
 
 ## License
-[MIT License](https://opensource.org/licenses/MIT) © [Daf Coe](mailto:dafcoe@gmail.com)
+[MIT License](https://opensource.org/licenses/MIT) © [Daf Coe](mailto:dafcoe@gmail.com), swoga

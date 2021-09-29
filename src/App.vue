@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>@dafcoe/vue-collapsible-panel</h1>
+    <h1>@swoga/vue-collapsible-panel</h1>
 
     <div class="dashboard">
       <vue-collapsible-panel-group>
@@ -63,7 +63,7 @@
 
     <div class="bottom-links">
       <a
-        href="https://github.com/dafcoe/vue-collapsible-panel"
+        href="https://github.com/swoga/vue-collapsible-panel"
         target="_blank"
       >
         <span
@@ -72,7 +72,7 @@
         />
       </a>
       <a
-        href="https://www.npmjs.com/package/@dafcoe/vue-collapsible-panel"
+        href="https://www.npmjs.com/package/@swoga/vue-collapsible-panel"
         target="_blank"
       >
         <span

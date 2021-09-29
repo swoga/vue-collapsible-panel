@@ -1,5 +1,5 @@
 {
-  "name": "@dafcoe/vue-collapsible-panel",
+  "name": "@swoga/vue-collapsible-panel",
   "version": "0.2.0",
   "description": "Collapsible Panel / Accordion Using Vue3",
   "keywords": [
@@ -9,15 +9,13 @@
     "vue3",
     "javascript"
   ],
-  "homepage": "https://github.com/dafcoe/vue-collapsible-panel",
+  "homepage": "https://github.com/swoga/vue-collapsible-panel",
   "bugs": {
-    "url": "https://github.com/dafcoe/vue-collapsible-panel/issues",
-    "email": "dafcoe@gmail.com"
+    "url": "https://github.com/swoga/vue-collapsible-panel/issues"
   },
   "license": "MIT",
   "author": {
-    "name": "Daf Coe",
-    "email": "dafcoe@gmail.com"
+    "name": "swoga"
   },
   "files": [
     "dist/*"
@@ -28,7 +26,7 @@
   "css": "dist/vue-collapsible-panel.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dafcoe/vue-collapsible-panel"
+    "url": "https://github.com/swoga/vue-collapsible-panel"
   },
   "scripts": {
     "build:dev": "vue-cli-service serve",
