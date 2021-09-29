@@ -30,6 +30,8 @@
       @enter="expand"
       @before-leave="expand"
       @leave="collapse"
+      @after-enter="setHeightAuto"
+      @after-leave="setHeightAuto"
     >
       <div
         v-if="isExpanded"
@@ -52,8 +54,6 @@ import { v4 as uuid } from 'uuid'
 import {
   computed,
   defineComponent,
-  nextTick,
-  onUpdated,
   ref,
   onMounted,
 } from 'vue'
@@ -106,20 +106,12 @@ export default defineComponent({
       element.style.height = `${element.scrollHeight}px`
     }
 
-    const updateBodyHeight = async(): Promise<void> => {
-      await nextTick()
-
-      if (!bodyRef.value || !bodyContentRef.value) return
-
-      bodyRef.value.style.height = `${Math.min(bodyContentRef.value.scrollHeight, bodyRef.value.scrollHeight)}px`
+    const setHeightAuto = (element: HTMLElement): void => {
+      element.style.height = 'auto'
     }
 
     onMounted(() => {
       setPanelExpandedStatus(idGroup.value, idPanel, props.expanded)
-    })
-
-    onUpdated(() => {
-      updateBodyHeight()
     })
 
     return {
@@ -129,6 +121,7 @@ export default defineComponent({
       isExpanded,
       collapse,
       expand,
+      setHeightAuto,
       toggle,
       toggleIcon,
     }
