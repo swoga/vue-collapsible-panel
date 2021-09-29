@@ -1,6 +1,6 @@
 {
   "name": "@swoga/vue-collapsible-panel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Collapsible Panel / Accordion Using Vue3",
   "keywords": [
     "collapsible panel",
