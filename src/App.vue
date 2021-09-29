@@ -12,7 +12,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat.
           </template>
         </vue-collapsible-panel>
-        <vue-collapsible-panel>
+        <vue-collapsible-panel :has-content="false">
           <template #title>
             Panel B
           </template>

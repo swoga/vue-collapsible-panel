@@ -4,7 +4,7 @@
     class="vcp"
     :class="{
       'vcp--expanded': isExpanded,
-      'vcp--expandable': body.hasContent,
+      'vcp--expandable': hasContent,
     }"
   >
     <header
@@ -15,7 +15,7 @@
         <slot name="title" />
       </div>
       <div
-        v-if="body.hasContent"
+        v-if="hasContent"
         class="vcp__header-icon"
       >
         <slot name="icon">
@@ -25,7 +25,6 @@
     </header>
 
     <transition
-      :data-key="body.dataKey"
       name="slide"
       @before-enter="collapse"
       @enter="expand"
@@ -58,7 +57,6 @@ import {
   ref,
   onMounted,
 } from 'vue'
-import { VNodeArrayChildren } from '@vue/runtime-core'
 import { toggleIcon } from '@/components/vue-collapsible-panel.constant'
 import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
 
@@ -69,8 +67,13 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    hasContent: {
+      type: Boolean,
+      default: true,
+    },
+
   },
-  setup(props, context) {
+  setup(props) {
     const idPanel = `panel-${uuid()}`
     const panelRef = ref<HTMLElement>()
     const bodyRef = ref<HTMLElement>()
@@ -81,23 +84,16 @@ export default defineComponent({
       setPanelExpandedStatus,
     } = useCollapsiblePanelStore()
 
-    const body = computed(
-      () => ({
-        hasContent: context.slots.content && (context.slots.content()[0].children as VNodeArrayChildren).length > 0,
-        dataKey: uuid(),
-      }),
-    )
-
     const idGroup = computed(() => {
       return panelRef.value?.parentElement?.getAttribute('data-id-group') || ''
     })
 
     const isExpanded = computed(
-      () => panelExpanded(idGroup.value, idPanel).value && body.value.hasContent,
+      () => panelExpanded(idGroup.value, idPanel).value && props.hasContent,
     )
 
     const toggle = (): void => {
-      if (!body.value.hasContent) return
+      if (!props.hasContent) return
 
       togglePanelExpandedStatus(idGroup.value, idPanel)
     }
@@ -127,7 +123,6 @@ export default defineComponent({
     })
 
     return {
-      body,
       panelRef,
       bodyRef,
       bodyContentRef,
