@@ -34,7 +34,7 @@
       @after-leave="setHeightAuto"
     >
       <div
-        v-if="isExpanded"
+        v-show="isExpanded"
         ref="bodyRef"
         class="vcp__body"
       >
