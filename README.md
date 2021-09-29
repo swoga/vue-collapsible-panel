@@ -3,10 +3,10 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/swoga/vue-collapsible-panel?style=flat-square)
 
 # @swoga/vue-collapsible-panel
-Easy to use, customisable collapsible panel / accordion library built using Vue3.
+Easy to use, customisable collapsible panel / accordion library built using Vue3.  
 This is a fork of [dafcoe/vue-collapsible-panel](https://github.com/dafcoe/vue-collapsible-panel).
 <br>
-See it action on [demo](https://swoga.github.io/vue-colapsible-panel) page.
+See it action on [demo](https://swoga.github.io/vue-collapsible-panel) page.
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
