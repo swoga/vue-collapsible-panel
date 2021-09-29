@@ -34,6 +34,7 @@
       @after-leave="setHeightAuto"
     >
       <div
+        v-if="isInitialized"
         v-show="isExpanded"
         ref="bodyRef"
         class="vcp__body"
@@ -56,6 +57,7 @@ import {
   defineComponent,
   ref,
   onMounted,
+  watchEffect,
 } from 'vue'
 import { toggleIcon } from '@/components/vue-collapsible-panel.constant'
 import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
@@ -71,13 +73,17 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-
+    initialize: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const idPanel = `panel-${uuid()}`
     const panelRef = ref<HTMLElement>()
     const bodyRef = ref<HTMLElement>()
     const bodyContentRef = ref<HTMLElement>()
+    const isInitialized = ref(props.initialize)
     const {
       panelExpanded,
       togglePanelExpandedStatus,
@@ -91,6 +97,15 @@ export default defineComponent({
     const isExpanded = computed(
       () => panelExpanded(idGroup.value, idPanel).value && props.hasContent,
     )
+
+    if (!isInitialized.value) {
+      const isInitializedWatchStop = watchEffect(() => {
+        if (isExpanded.value) {
+          isInitialized.value = true
+          isInitializedWatchStop()
+        }
+      })
+    }
 
     const toggle = (): void => {
       if (!props.hasContent) return
@@ -119,6 +134,7 @@ export default defineComponent({
       bodyRef,
       bodyContentRef,
       isExpanded,
+      isInitialized,
       collapse,
       expand,
       setHeightAuto,
